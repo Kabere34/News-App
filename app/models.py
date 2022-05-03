@@ -1,5 +1,3 @@
-from re import U
-
 
 class News:
   def __init__(self,author,title,description,url,urlToImage,publishedAt,content):
@@ -13,7 +11,7 @@ class News:
     self.content=content
 
 class Sites:
-  def __init__(self,id,name,description,url,category,):
+  def __init__(self,id,name,description,url,category):
 
     self.id=id
     self.name=name

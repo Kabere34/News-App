@@ -1,11 +1,11 @@
-from tkinter import S
 from app import app
 import urllib.request,json
-from .models import news
+from .models import News,Sites,Sources
 
-News=news.News
-Sites=news.Sites
-Sources=news.Sources
+
+# News=news.News
+# Sites=news.Sites
+# Sources=news.Sources
 
 
 # Getting api key
@@ -28,10 +28,10 @@ def get_news():
 
     if get_news_response['articles']:
       news_results_list=get_news_response['articles']
-      news_results=process_results(news_results_list)
+      news_results=process_news_results(news_results_list)
   return news_results
 
-def process_results(news_list):
+def process_news_results(news_list):
   '''
     Function  that processes the news result and transform them to a list of Objects
 
@@ -69,10 +69,11 @@ def get_sites():
 
     if get_sites_response['sources']:
       sites_results_list=get_sites_response['sources']
-      sites_results=process_results(sites_results_list)
+      sites_results=process_sites_results(sites_results_list)
+
   return sites_results
 
-def process_results(sites_list):
+def process_sites_results(sites_list):
   '''
     Function  that processes the sites result and transform them to a list of Objects
 
@@ -82,7 +83,8 @@ def process_results(sites_list):
     Returns :
         sites_results: A list of sites objects
     '''
-  sites_results=[]
+
+  sites_results = []
   for sites_item in sites_list:
     id=sites_item.get('id')
     name=sites_item.get('name')
@@ -90,8 +92,7 @@ def process_results(sites_list):
     url=sites_item.get('url')
     category=sites_item.get('category')
 
-
-    sites_object=Sites(id,name,description,url,category)
+    sites_object = Sites(id, name, description, url, category)
     sites_results.append(sites_object)
 
   return sites_results
@@ -108,10 +109,10 @@ def get_sources(source):
 
     if get_sources_response['articles']:
       sources_results_list=get_sources_response['articles']
-      sources_results=process_results(sources_results_list)
+      sources_results=process_sources_results(sources_results_list)
   return sources_results
 
-def process_results(sources_list):
+def process_sources_results(sources_list):
   '''
     Function  that processes the sources result and transform them to a list of Objects
 
@@ -121,6 +122,8 @@ def process_results(sources_list):
     Returns :
         sources_results: A list of sites objects
     '''
+  print(sources_list)
+
   sources_results=[]
   for sources_item in sources_list:
     sources=sources_item.get('sources')
@@ -133,7 +136,9 @@ def process_results(sources_list):
     content=sources_item.get('content')
 
 
-    sources_object=Sources(sources,author,title,description,url,urlToImage,publishedAt,content)
+
+
+    sources_object = Sources(sources,author,title,description,url,urlToImage,publishedAt,content)
     sources_results.append(sources_object)
 
   return sources_results
