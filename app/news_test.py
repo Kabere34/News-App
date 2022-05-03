@@ -1,5 +1,6 @@
 import unittest
 from models import sources
+from models import news_src
 Sources= sources.Sources
 
 class sourcesTest(unittest.TestCase):
@@ -11,3 +12,9 @@ class sourcesTest(unittest.TestCase):
     Set up method that will run before every Test
     '''
     self.sources_sources = Sources()
+
+
+
+
+
+
