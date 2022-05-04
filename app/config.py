@@ -20,6 +20,6 @@ class DevConfig(Config):
   Development configuration child class
 
   Args:
-      Config:The parent configuration class with General configuration settings
+      Config:The parent configuration class with General configuration setting
   '''
 DEBUG = True
