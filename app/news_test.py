@@ -5,7 +5,7 @@ Sources= sources.Sources
 
 class sourcesTest(unittest.TestCase):
   '''
-  Test class to test the behaviour of the sources class
+  Test class to test behaviour of the sources class
   '''
   def SetUp(self):
     '''
