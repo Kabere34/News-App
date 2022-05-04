@@ -30,7 +30,7 @@ def sources(source):
 @app.route('/headlines')
 def headlines():
     '''
-    View sources page function that return the sources details page and its data
+    View sources pages function that return the sources details page and its data
     '''
     news=get_news()
 
