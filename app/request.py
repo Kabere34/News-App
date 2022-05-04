@@ -33,7 +33,7 @@ def get_news():
 
 def process_news_results(news_list):
   '''
-    Function  that processes the news result and transforms them to a list of Objects
+    Function  that processes the news results and transforms them to a list of Objects
 
     Args:
         news_list: A list of dictionaries that contain news details
