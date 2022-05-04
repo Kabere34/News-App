@@ -3,7 +3,7 @@ class Config:
     General configuration parent class
   '''
 
-SOURCES_BASE_URL = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
+  SOURCES_BASE_URL = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
 
 
 class ProdConfig(Config):
@@ -13,7 +13,7 @@ class ProdConfig(Config):
   Args:
        Config:The parent configuration class with General configuration settings
   '''
-pass
+  pass
 
 class DevConfig(Config):
   '''
@@ -22,4 +22,4 @@ class DevConfig(Config):
   Args:
       Config:The parent configuration class with General configuration setting
   '''
-DEBUG = True
+  DEBUG = True
